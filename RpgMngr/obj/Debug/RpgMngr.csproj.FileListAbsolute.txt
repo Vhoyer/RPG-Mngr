@@ -1,0 +1,10 @@
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\bin\Debug\RpgMngr.exe.config
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\bin\Debug\RpgMngr.exe
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\bin\Debug\RpgMngr.pdb
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.csprojResolveAssemblyReference.cache
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmMain.resources
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmDndBattle.resources
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Properties.Resources.resources
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.csproj.GenerateResource.Cache
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.exe
+c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.pdb
