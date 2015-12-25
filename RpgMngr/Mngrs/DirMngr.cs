@@ -122,7 +122,8 @@ namespace RpgMngr.Mngrs
             return true;
         }
         #endregion
-        
+
+        #region "CreateFile"
         /// <summary>
         /// Cria um arquivo
         /// </summary>
@@ -146,6 +147,35 @@ namespace RpgMngr.Mngrs
             }
             return true;
         }
+        /// <summary>
+        /// Cria um arquivo
+        /// </summary>
+        /// <param name="firstLine">escreve na primeira linha do arquivo</param>
+        /// <returns></returns>
+        public bool CreateFile(string firstLine)
+        {
+            try
+            {
+                if (!System.IO.File.Exists(path))
+                {
+                    System.IO.File.Create(path).Close();
+                    AppendText(firstLine);
+                }
+                else
+                {
+                    List<string> lines = new List<string>();
+                    lines.Add(firstLine);
+                    lines.AddRange(ReadAll());
+                    System.IO.File.WriteAllLines(path, lines);
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+        #endregion
 
         #region "AppendText"
         /// <summary>
@@ -214,6 +244,26 @@ namespace RpgMngr.Mngrs
         }
         #endregion
 
+        #region "overwrite"
+        /// <summary>
+        /// Reescreve todo o documento
+        /// </summary>
+        /// <param name="lines"></param>
+        public void overwrite(IEnumerable<string> lines)
+        {
+            System.IO.File.WriteAllLines(path, lines);
+        }
+        /// <summary>
+        /// Reescreve todo o documento
+        /// </summary>
+        /// <param name="lines"></param>
+        public void overwrite(string line)
+        {
+            string[] strs = new string[] { line };
+            System.IO.File.WriteAllLines(path, strs);
+        }
+        #endregion
+
         #region "ReadAll"
         /// <summary>
         /// lê todo um documento em um List<string>
@@ -257,7 +307,6 @@ namespace RpgMngr.Mngrs
         /// <param name="New">novo valor da linha</param>
         public void Rewrite(int line, string New)
         {
-
             System.IO.StreamReader reader = new System.IO.StreamReader(path);
             List<string> lines = new List<string>();
 

@@ -45,28 +45,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDndBattle.cs">
+    <Compile Include="Dnd_35\acsPlayer.cs" />
+    <Compile Include="Dnd_35\frmCreatePlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDndBattle.Designer.cs">
+    <Compile Include="Dnd_35\frmCreatePlayer.Designer.cs">
+      <DependentUpon>frmCreatePlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dnd_35\frmPlayers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dnd_35\frmPlayers.Designer.cs">
+      <DependentUpon>frmPlayers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dnd_35\frmDnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dnd_35\frmDnd.Designer.cs">
+      <DependentUpon>frmDnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dnd_35\frmDndBattle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dnd_35\frmDndBattle.Designer.cs">
       <DependentUpon>frmDndBattle.cs</DependentUpon>
     </Compile>
     <Compile Include="Mngrs\ConfigMngr.cs" />
     <Compile Include="Mngrs\DirMngr.cs" />
+    <Compile Include="Mngrs\interfaceMngr.cs" />
     <Compile Include="Mngrs\openRmt.cs" />
     <Compile Include="Mngrs\TableMngr.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDndBattle.resx">
+    <EmbeddedResource Include="Dnd_35\frmCreatePlayer.resx">
+      <DependentUpon>frmCreatePlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dnd_35\frmPlayers.resx">
+      <DependentUpon>frmPlayers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dnd_35\frmDnd.resx">
+      <DependentUpon>frmDnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dnd_35\frmDndBattle.resx">
       <DependentUpon>frmDndBattle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -8,3 +8,15 @@ c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\R
 c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.csproj.GenerateResource.Cache
 c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.exe
 c:\users\vhoye\documents\visual studio 2015\Projects\RpgMngr\RpgMngr\obj\Debug\RpgMngr.pdb
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\bin\Debug\RpgMngr.exe.config
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.exe
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.pdb
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\bin\Debug\RpgMngr.exe
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\bin\Debug\RpgMngr.pdb
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.csprojResolveAssemblyReference.cache
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmMain.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmDndBattle.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Properties.Resources.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.csproj.GenerateResource.Cache
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.AboutBox.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmDnd.resources

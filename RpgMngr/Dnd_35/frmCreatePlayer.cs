@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RpgMngr
+namespace RpgMngr.Dnd_35
 {
-    public partial class frmDndBattle : Form
+    public partial class frmCreatePlayer : Form
     {
-        public frmDndBattle()
+        public frmCreatePlayer()
         {
             InitializeComponent();
         }

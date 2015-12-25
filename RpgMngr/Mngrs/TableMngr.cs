@@ -10,13 +10,14 @@ namespace RpgMngr.Mngrs
 {
     class TableMngr
     {
+        static string tablesPath = DirMngr.Dir + @"Mesas\";
         DirMngr dirmngr;
         List<string> Param = new List<string>();
         int ln;
 
         public TableMngr()
         {
-            dirmngr = new DirMngr(DirMngr.Dir + @"\Config.ini");
+            dirmngr = new DirMngr(tablesPath + tableName + @"\TableConfig.rtc");
             LoadConfig();
         }
 
@@ -178,10 +179,11 @@ namespace RpgMngr.Mngrs
 
         #endregion
 
+        #region "Configs"
         /// <summary>
         /// Loada o arquivo e carrega os parametros do arquivo nos parametros da classe
         /// </summary>
-        public void LoadConfig()
+        public bool LoadConfig()
         {
             Param = dirmngr.ReadAll();
 
@@ -193,7 +195,17 @@ namespace RpgMngr.Mngrs
                     i--;
                 }
             }
-            //FnUVariable("varName", ref var);
+            if (Param[0] != "rmtv1.0")
+                return false;
+
+            //
+            // FnUVariable("varName", ref var);
+            //
+            FnUVariable("rpgsystem", ref rpgsystem);
+            FnUVariable("lastplayed", ref lastplayed);
+            FnUVariable("tableName", ref tableName);
+
+            return true;
         }
 
         /// <summary>
@@ -201,9 +213,14 @@ namespace RpgMngr.Mngrs
         /// </summary>
         public void UpdateFile()
         {
-            dirmngr.CreateFile();
+            dirmngr.CreateFile("rmtv1.0");
 
-            //FnRParam("varName", var);
+            //
+            // FnRParam("varName", var);
+            //
+            FnRParam("rpgsystem", rpgsystem);
+            FnRParam("lastplayed", lastplayed);
+            FnRParam("tableName", tableName);
         }
 
         /// <summary>
@@ -221,27 +238,16 @@ namespace RpgMngr.Mngrs
                 dirmngr.Rewrite(ln, config);
             }
         }
+        #endregion
 
         //
         // Propriedades
         //
         string rpgsystem = "",
-            lastplayed = "";
+            lastplayed = "",
+            tableName = "";
 
         public string Rpgsystem
-        {
-            get
-            {
-                return Rpgsystem1;
-            }
-
-            set
-            {
-                Rpgsystem1 = value;
-            }
-        }
-
-        public string Rpgsystem1
         {
             get
             {
@@ -264,6 +270,24 @@ namespace RpgMngr.Mngrs
             set
             {
                 lastplayed = value;
+            }
+        }
+
+        public static string TablesPath
+        {
+            get { return tablesPath; }
+        }
+
+        public string TableName
+        {
+            get
+            {
+                return tableName;
+            }
+
+            set
+            {
+                tableName = value;
             }
         }
     }
