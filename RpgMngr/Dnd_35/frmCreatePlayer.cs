@@ -15,6 +15,8 @@ namespace RpgMngr.Dnd_35
         public frmCreatePlayer()
         {
             InitializeComponent();
+            dataGridView1.DataSource = playersDefaultTables.periaciaTable();
+            dataGridView2.DataSource = playersDefaultTables.equipamentoTable();
         }
     }
 }

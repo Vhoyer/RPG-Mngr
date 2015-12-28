@@ -10,7 +10,7 @@ namespace RpgMngr.Dnd_35
     public class acsPlayer
     {
         DataTable table;
-        System.IO.StreamReader reader;
+        //System.IO.StreamReader reader;
 
         public acsPlayer()
         {

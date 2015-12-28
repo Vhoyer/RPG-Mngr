@@ -15,8 +15,10 @@ C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\bin\Debug\RpgMngr.exe
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\bin\Debug\RpgMngr.pdb
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.csprojResolveAssemblyReference.cache
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmMain.resources
-C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmDndBattle.resources
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Properties.Resources.resources
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.csproj.GenerateResource.Cache
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.AboutBox.resources
-C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmDnd.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Dnd_35.frmCreatePlayer.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Dnd_35.frmPlayers.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Dnd_35.frmBattle.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Dnd_35.frmMain.resources

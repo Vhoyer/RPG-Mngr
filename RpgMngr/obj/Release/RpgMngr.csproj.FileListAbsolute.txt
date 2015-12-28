@@ -1,0 +1,13 @@
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\bin\Release\RpgMngr.exe.config
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\bin\Release\RpgMngr.exe
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\bin\Release\RpgMngr.pdb
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.AboutBox.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.Dnd_35.frmBattle.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.Dnd_35.frmCreatePlayer.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.Dnd_35.frmPlayers.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.Dnd_35.frmMain.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.frmMain.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.Properties.Resources.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.csproj.GenerateResource.Cache
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.exe
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Release\RpgMngr.pdb

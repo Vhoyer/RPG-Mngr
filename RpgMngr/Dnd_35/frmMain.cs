@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RpgMngr.Dnd_35
 {
-    public partial class frmDnd : Form
+    public partial class frmMain : Form
     {
-        public frmDnd()
+        public frmMain()
         {
             InitializeComponent();
         }

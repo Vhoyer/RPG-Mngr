@@ -1,6 +1,6 @@
 ﻿namespace RpgMngr.Dnd_35
 {
-    partial class frmDnd
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.

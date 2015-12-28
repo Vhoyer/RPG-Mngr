@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace RpgMngr.Mngrs
 {
-    class interfaceMngr
+    public class interfaceMngr
     {
-        public bool isFieldsEmpty(object[] fields)
+        public static bool isFieldsEmpty(object[] fields)
         {
-            System.Windows.Forms.TextBox[] txts = (fields as System.Windows.Forms.TextBox[]);
+            System.Windows.Forms.TextBox[] txts = new System.Windows.Forms.TextBox[fields.Length - 1];
+            for (int i = 0; i < fields.Length - 1; i++)
+            {
+                txts[i] = (fields[i] as System.Windows.Forms.TextBox);
+            }
 
             foreach (System.Windows.Forms.TextBox txt in txts)
             {

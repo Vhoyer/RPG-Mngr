@@ -1,0 +1,3 @@
+﻿erro 001 = "Documento de extenção errada", file:Program.cs line:39;
+erro 002 = "versão do arquivo não compatível", file:Program.cs line:55;
+erro 003 = "Documento em branco", file:Program.cs line:55;

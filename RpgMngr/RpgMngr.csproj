@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'testArgs|AnyCPU'">
+    <OutputPath>bin\testArgs\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +55,12 @@
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Dnd_35\acsPlayer.cs" />
+    <Compile Include="Dnd_35\frmBattle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dnd_35\frmBattle.Designer.cs">
+      <DependentUpon>frmBattle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dnd_35\frmCreatePlayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,33 +73,32 @@
     <Compile Include="Dnd_35\frmPlayers.Designer.cs">
       <DependentUpon>frmPlayers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dnd_35\frmDnd.cs">
+    <Compile Include="Dnd_35\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dnd_35\frmDnd.Designer.cs">
-      <DependentUpon>frmDnd.cs</DependentUpon>
+    <Compile Include="Dnd_35\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dnd_35\playersDefaultTables.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dnd_35\frmDndBattle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dnd_35\frmDndBattle.Designer.cs">
-      <DependentUpon>frmDndBattle.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mngrs\ConfigMngr.cs" />
+    <Compile Include="Mngrs\CryptMngr.cs" />
     <Compile Include="Mngrs\DirMngr.cs" />
     <Compile Include="Mngrs\interfaceMngr.cs" />
-    <Compile Include="Mngrs\openRmt.cs" />
-    <Compile Include="Mngrs\TableMngr.cs" />
+    <Compile Include="Mngrs\OpenRmgd.cs" />
+    <Compile Include="Mngrs\WriteRmgd.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dnd_35\frmBattle.resx">
+      <DependentUpon>frmBattle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dnd_35\frmCreatePlayer.resx">
       <DependentUpon>frmCreatePlayer.cs</DependentUpon>
@@ -98,14 +106,11 @@
     <EmbeddedResource Include="Dnd_35\frmPlayers.resx">
       <DependentUpon>frmPlayers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dnd_35\frmDnd.resx">
-      <DependentUpon>frmDnd.cs</DependentUpon>
+    <EmbeddedResource Include="Dnd_35\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dnd_35\frmDndBattle.resx">
-      <DependentUpon>frmDndBattle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,6 +120,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33338__jcbatz__dump.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ErrorList.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

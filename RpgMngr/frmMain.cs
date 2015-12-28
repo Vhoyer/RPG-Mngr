@@ -13,7 +13,10 @@ namespace RpgMngr
 {
     public partial class frmMain : Form
     {
-        interfaceMngr face = new interfaceMngr();
+        enum systems
+        {
+            Dnd3dot5 = 0 
+        }
 
         public frmMain()
         {
@@ -22,25 +25,16 @@ namespace RpgMngr
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            DirMngr dir = new DirMngr(TableMngr.TablesPath, DirMngr.Dirt.folder);
+
         }
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-            if (!face.isFieldsEmpty(new object[] { txtNomeMesa, cbSistema }))
+            if (!interfaceMngr.isFieldsEmpty(new object[] { txtNomeMesa, cbSistema }))
             {
-                DirMngr dir = new DirMngr(TableMngr.TablesPath + txtNomeMesa.Text, DirMngr.Dirt.folder);
-                TableMngr mesa = new TableMngr()
-                {
-                    TableName = txtNomeMesa.Text,
-                    Rpgsystem = cbSistema.Text,
-                    Lastplayed = DateTime.Now.Date.ToShortDateString()
-                };
-
-                MessageBox.Show("Mesa Criada com sucesso.", "Mesa");
-                Dnd_35.frmDnd frm = new Dnd_35.frmDnd();
-                frm.Show();
-                this.Hide();
+                WriteRmgd rmgd = new WriteRmgd(txtNomeMesa.Text);
+                rmgd.Campaign.LoadDataRow(new object[] { "campaingName", txtNomeMesa.Text }, LoadOption.PreserveChanges);
+                rmgd.writeEverthig();
             }
             else
             {
@@ -52,6 +46,16 @@ namespace RpgMngr
         {
             AboutBox about = new AboutBox();
             about.ShowDialog();
+        }
+
+        private void abrirMesaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                OpenRmgd rmgd = new OpenRmgd(ofd.FileName);
+                dataGridView1.DataSource = rmgd.Campaign;
+            }
         }
     }
 }
