@@ -46,27 +46,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNomeMesa = new System.Windows.Forms.TextBox();
             this.btnCriar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.oiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grpMesa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbSistema
             // 
+            this.cbSistema.DisplayMember = "SystemsSupported";
+            this.cbSistema.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSistema.FormattingEnabled = true;
-            this.cbSistema.Items.AddRange(new object[] {
-            "DnD 3.5",
-            "Adicionar..."});
-            this.cbSistema.Location = new System.Drawing.Point(61, 18);
+            this.cbSistema.Location = new System.Drawing.Point(61, 55);
             this.cbSistema.Name = "cbSistema";
             this.cbSistema.Size = new System.Drawing.Size(121, 21);
             this.cbSistema.TabIndex = 0;
+            this.cbSistema.ValueMember = "SystemsSupported";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 22);
+            this.label1.Location = new System.Drawing.Point(5, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 1;
@@ -113,6 +112,8 @@
             // 
             // recentesToolStripMenuItem
             // 
+            this.recentesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oiToolStripMenuItem});
             this.recentesToolStripMenuItem.Name = "recentesToolStripMenuItem";
             this.recentesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.recentesToolStripMenuItem.Text = "Recentes";
@@ -127,6 +128,7 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -174,22 +176,22 @@
             this.grpMesa.Size = new System.Drawing.Size(275, 88);
             this.grpMesa.TabIndex = 3;
             this.grpMesa.TabStop = false;
-            this.grpMesa.Text = "Nova Mesa";
+            this.grpMesa.Text = "Nova Campanha";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 51);
+            this.label2.Location = new System.Drawing.Point(6, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 26);
+            this.label2.Size = new System.Drawing.Size(78, 26);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Nome \r\nda mesa: ";
+            this.label2.Text = "Nome \r\nda campanha: ";
             // 
             // txtNomeMesa
             // 
-            this.txtNomeMesa.Location = new System.Drawing.Point(61, 54);
+            this.txtNomeMesa.Location = new System.Drawing.Point(88, 21);
             this.txtNomeMesa.Name = "txtNomeMesa";
-            this.txtNomeMesa.Size = new System.Drawing.Size(121, 20);
+            this.txtNomeMesa.Size = new System.Drawing.Size(181, 20);
             this.txtNomeMesa.TabIndex = 3;
             // 
             // btnCriar
@@ -203,31 +205,28 @@
             this.btnCriar.UseVisualStyleBackColor = true;
             this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
-            // dataGridView1
+            // oiToolStripMenuItem
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(447, 148);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(275, 281);
-            this.dataGridView1.TabIndex = 4;
+            this.oiToolStripMenuItem.Name = "oiToolStripMenuItem";
+            this.oiToolStripMenuItem.Size = new System.Drawing.Size(84, 22);
+            this.oiToolStripMenuItem.Text = "oi";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 441);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.grpMesa);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "RPG Mngr!";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.grpMesa.ResumeLayout(false);
             this.grpMesa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,7 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem oiToolStripMenuItem;
     }
 }
 

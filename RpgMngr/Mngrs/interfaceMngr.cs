@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RpgMngr.Mngrs
+namespace Mngrs
 {
     public class interfaceMngr
     {

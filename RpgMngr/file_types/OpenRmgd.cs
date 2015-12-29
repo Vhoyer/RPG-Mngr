@@ -1,13 +1,9 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Collections.Generic;
-using System.IO.Compression;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using Mngrs;
 
-namespace RpgMngr.Mngrs
+namespace RpgMngr.file_types
 {
     public class OpenRmgd
     {
@@ -15,31 +11,43 @@ namespace RpgMngr.Mngrs
         int index;
         DirMngr dir;
         List<string> file = new List<string>();
-        DataTable paramCampaign;
+        DataTable paramCampaign, systemsSupported;
+        List<DataTable> tables = new List<DataTable>();
 
 
-        public OpenRmgd(string path)
+        public OpenRmgd(string path, bool runApp)
         {
-            MontTables();
+            MountTables();
             dir = new DirMngr(path);
-            List<string> Encrypted = new List<string>(), file = new List<string>();
-            Encrypted.AddRange(dir.ReadAll());
-
-            foreach (string str in Encrypted)
-            {
-                file.Add(CryptMngr.Decrypt(str));
-            }
-            this.file.AddRange(file);
-
             LoadConfig();
+
+            Form frm = returnForm();
+            if (runApp)
+            {
+                Application.Run(frm);
+            }
         }
+
+        public OpenRmgd(string path, Form originFrm)
+        {
+            MountTables();
+            dir = new DirMngr(path);
+            LoadConfig();
+
+            Form frm = returnForm();
+            originFrm.Hide();
+            frm.Show();
+        }
+
+        public OpenRmgd() { MountTables(); }
 
         #region "TablesSpawn"
-        private void MontTables()
+        private void MountTables()
         {
-            MontCampaign();
+            MountCampaign();
+            tables.Add(paramCampaign);
         }
-        public void MontCampaign()
+        public void MountCampaign()
         {
             paramCampaign = new DataTable("Campaign");
             paramCampaign.Columns.AddRange(new DataColumn[]
@@ -52,8 +60,29 @@ namespace RpgMngr.Mngrs
             paramCampaign.Rows.Add("lastPlayed", null);
             paramCampaign.Rows.Add("campaingName", null);
         }
+        public void MountSystemsSupported()
+        {
+            systemsSupported = new DataTable("SystemsSupported");
+            systemsSupported.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("System_Id", typeof(int)),
+                new DataColumn("System_Name", typeof(string))
+            });
+
+            systemsSupported.Rows.Add(0, "D&D 3.5");
+        }
         #endregion
 
+        private Form returnForm()
+        {
+            Form form = new frmMain();
+            if (valueofTable(paramCampaign, "rpgSystem") == 0.ToString()) //0 == D&D 3.5 see: MountSystemsSupported Method
+            {
+                form = new Dnd_35.frmMain();
+            }
+
+            return form;
+        }
         #region "private methods"
         /// <summary>
         /// Faz a mesma função do "indexOf", fiz pq não sabia que existia... MAS também retorna o valor do parametro
@@ -102,16 +131,16 @@ namespace RpgMngr.Mngrs
 
             for (int i = 0; i < file.Count; i++)
             {
-                if (file[i].Split('=')[0] == "[" + breakInField.ToUpper() + "]")
-                {
-                    start = i;
-                    canStop = true;
-                    found = true;
-                }
                 if (file[i].Split('=')[0].StartsWith("[") && canStop)
                 {
                     end = i;
                     break;
+                }
+                if (file[i].Split('=')[0] == "[" + breakInField.ToUpper() + "]" && !found)
+                {
+                    start = i;
+                    canStop = true;
+                    found = true;
                 }
             }
             if (found)
@@ -149,19 +178,52 @@ namespace RpgMngr.Mngrs
         }
         #endregion
 
-        #region "Configs"
+        #region "public methods"
         /// <summary>
         /// Loada o arquivo e carrega os parametros do arquivo nos parametros da classe
         /// </summary>
         public void LoadConfig()
         {
+            List<string> Encrypted = new List<string>(), file = new List<string>();
+            Encrypted.AddRange(dir.ReadAll());
+
+            foreach (string str in Encrypted)
+            {
+                file.Add(CryptMngr.Decrypt(str));
+            }
+            this.file.AddRange(file);
+
             loadTable(ref paramCampaign);
+        }
+
+        public string valueofTable(DataTable table, string paramName)
+        {
+            int index = -1;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (table.Rows[i][0].ToString() == paramName)
+                {
+                     index = i;
+                }
+            }
+
+            return table.Rows[index][1].ToString();
         }
         #endregion
 
-        public DataTable Campaign
+        //
+        // Propriedades
+        //
+        public DataTable CampaignTable
         {
             get { return paramCampaign; }
+        }
+        public DataTable SystemsSupported
+        {
+            get {
+                MountSystemsSupported();
+                return systemsSupported;
+            }
         }
         public List<string> File
         {

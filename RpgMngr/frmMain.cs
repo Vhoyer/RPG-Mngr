@@ -1,4 +1,5 @@
 ﻿using System;
+using Mngrs;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,17 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RpgMngr.Mngrs;
+using RpgMngr.file_types;
 
 namespace RpgMngr
 {
     public partial class frmMain : Form
     {
-        enum systems
-        {
-            Dnd3dot5 = 0 
-        }
-
         public frmMain()
         {
             InitializeComponent();
@@ -25,16 +21,23 @@ namespace RpgMngr
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            OpenRmgd table = new OpenRmgd();
+            cbSistema.DataSource = table.SystemsSupported;
+            cbSistema.DisplayMember = "System_Name";
+            cbSistema.ValueMember = "System_Id";
         }
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
             if (!interfaceMngr.isFieldsEmpty(new object[] { txtNomeMesa, cbSistema }))
             {
-                WriteRmgd rmgd = new WriteRmgd(txtNomeMesa.Text);
-                rmgd.Campaign.LoadDataRow(new object[] { "campaingName", txtNomeMesa.Text }, LoadOption.PreserveChanges);
-                rmgd.writeEverthig();
+                WriteRmgd write = new WriteRmgd(txtNomeMesa.Text);
+                write.editTable(write.CampaignTable.TableName, "campaingName", txtNomeMesa.Text);
+                write.editTable(write.CampaignTable.TableName, "rpgSystem", cbSistema.SelectedValue);
+                write.editTable(write.CampaignTable.TableName, "lastPlayed", DateTime.Now.ToUniversalTime());
+
+                write.writeEverthig();
+                OpenRmgd open = new OpenRmgd(write.CampaignRmgd, this);
             }
             else
             {
@@ -53,9 +56,18 @@ namespace RpgMngr
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                OpenRmgd rmgd = new OpenRmgd(ofd.FileName);
-                dataGridView1.DataSource = rmgd.Campaign;
+                OpenRmgd rmgd = new OpenRmgd(ofd.FileName, this);
             }
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

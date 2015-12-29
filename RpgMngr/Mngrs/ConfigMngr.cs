@@ -3,27 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
-namespace RpgMngr.Mngrs
+namespace Mngrs
 {
     class ConfigMngr
     {
         DirMngr dirmngr;
         List<string> Param = new List<string>();
         int ln;
-        string nickname = "User",
-            botname = "Robson";
+        DataTable configs = new DataTable();
 
-        public string Nickname
+        public DataTable Configs
         {
-            get { return nickname; }
-            set { nickname = value; }
-        }
-
-        public string Botname
-        {
-            get { return botname; }
-            set { botname = value; }
+            get { return configs; }
+            set { configs = value; }
         }
 
         public ConfigMngr()
@@ -111,8 +105,7 @@ namespace RpgMngr.Mngrs
                 }
             }
 
-            FnUVariable("nickname", ref nickname);
-            FnUVariable("botname", ref botname);
+            //FnUVariable("nickname", ref nickname);
         }
         #region "FnUVariables"
         /// <summary>
@@ -160,8 +153,7 @@ namespace RpgMngr.Mngrs
         {
             dirmngr.CreateFile();
 
-            FnRParam("nickname", nickname);
-            FnRParam("botname", botname);
+            //FnRParam("nickname", nickname);
         }
         #region "FnRParam"
         /// <summary>
