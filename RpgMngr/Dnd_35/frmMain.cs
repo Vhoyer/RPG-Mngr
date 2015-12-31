@@ -16,16 +16,16 @@ namespace RpgMngr.Dnd_35
         {
             InitializeComponent();
         }
+        public frmMain(string campaignName)
+        {
+            InitializeComponent();
+            this.Text = "RpgMngr!- D&D 3.5 - " + campaignName;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             frmBattle frm = new frmBattle();
             frm.ShowDialog();
-        }
-
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,9 +34,28 @@ namespace RpgMngr.Dnd_35
             frm.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
 
+        private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.Owner != null)
+            {
+                this.Close();
+            }
+            else
+            {
+                RpgMngr.frmMain frm = new RpgMngr.frmMain();
+                this.Hide();
+                frm.Show();
+            }
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Owner.Show();
         }
     }
 }

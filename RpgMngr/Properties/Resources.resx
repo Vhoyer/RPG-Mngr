@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dices" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\33338__jcbatz__dump.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\dices.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="file_version" xml:space="preserve">
     <value>rmgdv1.0</value>

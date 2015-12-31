@@ -30,13 +30,13 @@
         {
             this.cbSistema = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.criarMesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirMesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mspMain = new System.Windows.Forms.MenuStrip();
+            this.tsmiRpgMngr = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiNewC = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOpenC = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRecentC = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNomeMesa = new System.Windows.Forms.TextBox();
             this.btnCriar = new System.Windows.Forms.Button();
-            this.oiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.mspMain.SuspendLayout();
             this.grpMesa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,64 +70,63 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Sistema: ";
             // 
-            // menuStrip1
+            // mspMain
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem,
+            this.mspMain.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.mspMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiRpgMngr,
             this.editarToolStripMenuItem,
             this.visualizarToolStripMenuItem,
             this.ajudaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(734, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mspMain.Location = new System.Drawing.Point(0, 0);
+            this.mspMain.Name = "mspMain";
+            this.mspMain.Size = new System.Drawing.Size(734, 24);
+            this.mspMain.TabIndex = 2;
+            this.mspMain.Text = "menuStrip1";
             // 
-            // arquivoToolStripMenuItem
+            // tsmiRpgMngr
             // 
-            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.criarMesaToolStripMenuItem,
-            this.abrirMesaToolStripMenuItem,
-            this.recentesToolStripMenuItem,
+            this.tsmiRpgMngr.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiNewC,
+            this.tsmiOpenC,
+            this.tsmiRecentC,
             this.toolStripMenuItem1,
-            this.sairToolStripMenuItem});
-            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.arquivoToolStripMenuItem.Text = "RPG Mngr";
+            this.tsmiQuit});
+            this.tsmiRpgMngr.Name = "tsmiRpgMngr";
+            this.tsmiRpgMngr.Size = new System.Drawing.Size(73, 20);
+            this.tsmiRpgMngr.Text = "RPG Mngr";
             // 
-            // criarMesaToolStripMenuItem
+            // tsmiNewC
             // 
-            this.criarMesaToolStripMenuItem.Name = "criarMesaToolStripMenuItem";
-            this.criarMesaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.criarMesaToolStripMenuItem.Text = "Nova Mesa";
+            this.tsmiNewC.Name = "tsmiNewC";
+            this.tsmiNewC.Size = new System.Drawing.Size(163, 22);
+            this.tsmiNewC.Text = "Nova Campanha";
             // 
-            // abrirMesaToolStripMenuItem
+            // tsmiOpenC
             // 
-            this.abrirMesaToolStripMenuItem.Name = "abrirMesaToolStripMenuItem";
-            this.abrirMesaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.abrirMesaToolStripMenuItem.Text = "Abrir Mesa";
-            this.abrirMesaToolStripMenuItem.Click += new System.EventHandler(this.abrirMesaToolStripMenuItem_Click);
+            this.tsmiOpenC.Name = "tsmiOpenC";
+            this.tsmiOpenC.Size = new System.Drawing.Size(163, 22);
+            this.tsmiOpenC.Text = "Abrir Campanha";
+            this.tsmiOpenC.Click += new System.EventHandler(this.abrirMesaToolStripMenuItem_Click);
             // 
-            // recentesToolStripMenuItem
+            // tsmiRecentC
             // 
-            this.recentesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oiToolStripMenuItem});
-            this.recentesToolStripMenuItem.Name = "recentesToolStripMenuItem";
-            this.recentesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.recentesToolStripMenuItem.Text = "Recentes";
+            this.tsmiRecentC.Name = "tsmiRecentC";
+            this.tsmiRecentC.Size = new System.Drawing.Size(163, 22);
+            this.tsmiRecentC.Text = "Recentes";
+            this.tsmiRecentC.DropDownOpening += new System.EventHandler(this.tsmiRecentC_DropDownOpening);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(160, 6);
             // 
-            // sairToolStripMenuItem
+            // tsmiQuit
             // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            this.tsmiQuit.Name = "tsmiQuit";
+            this.tsmiQuit.Size = new System.Drawing.Size(163, 22);
+            this.tsmiQuit.Text = "Sair";
+            this.tsmiQuit.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
@@ -205,26 +203,20 @@
             this.btnCriar.UseVisualStyleBackColor = true;
             this.btnCriar.Click += new System.EventHandler(this.btnCriar_Click);
             // 
-            // oiToolStripMenuItem
-            // 
-            this.oiToolStripMenuItem.Name = "oiToolStripMenuItem";
-            this.oiToolStripMenuItem.Size = new System.Drawing.Size(84, 22);
-            this.oiToolStripMenuItem.Text = "oi";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 441);
             this.Controls.Add(this.grpMesa);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mspMain);
+            this.MainMenuStrip = this.mspMain;
             this.Name = "frmMain";
             this.Text = "RPG Mngr!";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mspMain.ResumeLayout(false);
+            this.mspMain.PerformLayout();
             this.grpMesa.ResumeLayout(false);
             this.grpMesa.PerformLayout();
             this.ResumeLayout(false);
@@ -236,13 +228,13 @@
 
         private System.Windows.Forms.ComboBox cbSistema;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem criarMesaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abrirMesaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem recentesToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip mspMain;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRpgMngr;
+        private System.Windows.Forms.ToolStripMenuItem tsmiNewC;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOpenC;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRecentC;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiQuit;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
         private System.Windows.Forms.GroupBox grpMesa;
@@ -252,7 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem oiToolStripMenuItem;
     }
 }
 

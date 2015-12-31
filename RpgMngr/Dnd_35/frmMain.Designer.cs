@@ -29,18 +29,62 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.rpgMngrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.voltarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rpgMngrToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(734, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // rpgMngrToolStripMenuItem
+            // 
+            this.rpgMngrToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salvarToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.voltarToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.rpgMngrToolStripMenuItem.Name = "rpgMngrToolStripMenuItem";
+            this.rpgMngrToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.rpgMngrToolStripMenuItem.Text = "Rpg Mngr";
+            // 
+            // salvarToolStripMenuItem
+            // 
+            this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.salvarToolStripMenuItem.Text = "Salvar";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(102, 6);
+            // 
+            // voltarToolStripMenuItem
+            // 
+            this.voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
+            this.voltarToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.voltarToolStripMenuItem.Text = "Voltar";
+            this.voltarToolStripMenuItem.Click += new System.EventHandler(this.voltarToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -72,8 +116,10 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
-            this.Text = "frmDnd";
+            this.Text = "RpgMngr! - D&D 3.5";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,5 +130,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem rpgMngrToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem voltarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }

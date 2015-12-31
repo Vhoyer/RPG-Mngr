@@ -80,6 +80,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Dnd_35\playersDefaultTables.cs" />
+    <Compile Include="file_types\files.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,13 +91,10 @@
     <Compile Include="Mngrs\CryptMngr.cs" />
     <Compile Include="Mngrs\DirMngr.cs" />
     <Compile Include="Mngrs\interfaceMngr.cs" />
-    <Compile Include="Mngrs\OpenRmgd.cs" />
-    <Compile Include="Mngrs\WriteRmgd.cs" />
+    <Compile Include="file_types\OpenRmgd.cs" />
+    <Compile Include="file_types\WriteRmgd.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tables\systemsSupported.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,9 +123,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Tables\systemsSupported.resx">
-      <DependentUpon>systemsSupported.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,14 +137,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\33338__jcbatz__dump.wav" />
+    <None Include="Resources\dices.wav" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ErrorList.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

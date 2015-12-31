@@ -10,7 +10,7 @@ namespace RpgMngr.file_types
     /// </summary>
     class WriteRmgd
     {
-        string campaignsPath = DirMngr.Dir + @"Mesas\";
+        string campaignsPath = DirMngr.Dir + @"Campanhas\";
         DirMngr dir;
         List<string> file = new List<string>();
         DataTable paramCampaign;
@@ -37,7 +37,7 @@ namespace RpgMngr.file_types
         /// </summary>
         private void MontTables()
         {
-            OpenRmgd rmgd = new OpenRmgd(campaignPath + campaignName + ".rmgd", false);
+            OpenRmgd rmgd = new OpenRmgd(campaignPath + campaignName + ".rmgd");
             CampaignTable = rmgd.CampaignTable;
             tables.Add(CampaignTable);
         }
@@ -63,6 +63,7 @@ namespace RpgMngr.file_types
         /// </summary>
         public void writeEverthig()
         {
+            file = new List<string>();
             file.Add(RpgMngr.Properties.Resources.file_version);
             List<string> temp;
 
@@ -81,7 +82,7 @@ namespace RpgMngr.file_types
                 Encrypted.Add(CryptMngr.Encrypt(str));
             }
 
-            dir.overwrite(Encrypted);
+            dir.Overwrite(Encrypted);
         }
 
         /// <summary>

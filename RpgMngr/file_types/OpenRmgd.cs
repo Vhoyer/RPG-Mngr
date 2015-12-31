@@ -7,13 +7,18 @@ namespace RpgMngr.file_types
 {
     public class OpenRmgd
     {
-        string campaignsPath = DirMngr.Dir + @"Mesas\";
-        int index;
+        string campaignsPath = DirMngr.Dir + @"Campanhas\";
         DirMngr dir;
         List<string> file = new List<string>();
         DataTable paramCampaign, systemsSupported;
         List<DataTable> tables = new List<DataTable>();
 
+        public OpenRmgd(string path)
+        {
+            MountTables();
+            dir = new DirMngr(path);
+            LoadConfig();
+        }
 
         public OpenRmgd(string path, bool runApp)
         {
@@ -21,9 +26,9 @@ namespace RpgMngr.file_types
             dir = new DirMngr(path);
             LoadConfig();
 
-            Form frm = returnForm();
             if (runApp)
             {
+                Form frm = returnForm();
                 Application.Run(frm);
             }
         }
@@ -36,16 +41,21 @@ namespace RpgMngr.file_types
 
             Form frm = returnForm();
             originFrm.Hide();
-            frm.Show();
+            frm.Show(originFrm);
         }
 
         public OpenRmgd() { MountTables(); }
 
         #region "TablesSpawn"
+        private void updateTableList()
+        {
+            tables.Add(paramCampaign);
+            
+            files.AddRecentRmgdFile(valueofTable(tables[0], "campaignName"), dir.Path);
+        }
         private void MountTables()
         {
             MountCampaign();
-            tables.Add(paramCampaign);
         }
         public void MountCampaign()
         {
@@ -57,8 +67,7 @@ namespace RpgMngr.file_types
             });
 
             paramCampaign.Rows.Add("rpgSystem", null);
-            paramCampaign.Rows.Add("lastPlayed", null);
-            paramCampaign.Rows.Add("campaingName", null);
+            paramCampaign.Rows.Add("campaignName", null);
         }
         public void MountSystemsSupported()
         {
@@ -78,46 +87,12 @@ namespace RpgMngr.file_types
             Form form = new frmMain();
             if (valueofTable(paramCampaign, "rpgSystem") == 0.ToString()) //0 == D&D 3.5 see: MountSystemsSupported Method
             {
-                form = new Dnd_35.frmMain();
+                form = new Dnd_35.frmMain(valueofTable(paramCampaign, "campaignName"));
             }
 
             return form;
         }
         #region "private methods"
-        /// <summary>
-        /// Faz a mesma função do "indexOf", fiz pq não sabia que existia... MAS também retorna o valor do parametro
-        /// </summary>
-        /// <param name="Search"></param>
-        /// <returns></returns>
-        private string Find(string Search, string searchField)
-        {
-            int start = 0, end = file.Count;
-            bool canStop = false;
-
-            for (int i = 0; i < file.Count; i++)
-            {
-                if (file[i].Split('=')[0] == "[" + searchField.ToUpper() + "]")
-                {
-                    start = i;
-                    canStop = true;
-                }
-                if (file[i].Split('=')[0].StartsWith("[") && canStop)
-                {
-                    end = i;
-                    break;
-                }
-            }
-
-            for (int i = start; i < end; i++)
-            {
-                if (file[i].Split('=')[0] == Search)
-                {
-                    index = i;
-                    return file[i].Split('=')[1];
-                }
-            }
-            return null;
-        }
         /// <summary>
         /// retorna uma lista com as linhas de só um campo
         /// </summary>
@@ -152,7 +127,7 @@ namespace RpgMngr.file_types
                 return retorno;
             }
 
-            return null;
+            return new List<string>();
         }
         /// <summary>
         /// Retorna uma tabela com os valores de um campo do arquivo
@@ -161,18 +136,23 @@ namespace RpgMngr.file_types
         private void loadTable(ref DataTable dt)
         {
             List<string> lst = new List<string>();
-            if (breakFile(dt.TableName) != null)
-            {
-                lst.AddRange(breakFile(dt.TableName));
-            }
+            lst.AddRange(breakFile(dt.TableName));
+            lst.Remove("[" + dt.TableName.ToUpper() + "]");
+
             foreach (string item in lst)
             {
+                bool found = false;
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     if (item.Split('=')[0] == dt.Rows[i][0].ToString())
                     {
+                        found = true;
                         dt.Rows[i][1] = item.Split('=')[1];
                     }
+                }
+                if (!found)
+                {
+                    dt.Rows.Add(item.Split('=')[0], item.Split('=')[1]);
                 }
             }
         }
@@ -194,20 +174,21 @@ namespace RpgMngr.file_types
             this.file.AddRange(file);
 
             loadTable(ref paramCampaign);
+
+            updateTableList();
         }
 
         public string valueofTable(DataTable table, string paramName)
         {
-            int index = -1;
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 if (table.Rows[i][0].ToString() == paramName)
                 {
-                     index = i;
+                    return table.Rows[i][1].ToString();
                 }
             }
 
-            return table.Rows[index][1].ToString();
+            return null;
         }
         #endregion
 
