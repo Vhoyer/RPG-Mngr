@@ -22,3 +22,4 @@ C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Dnd_3
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Dnd_35.frmPlayers.resources
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Dnd_35.frmBattle.resources
 C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.Dnd_35.frmMain.resources
+C:\Users\vhoye\OneDrive\programas\Csharp\RpgMngr\RpgMngr\obj\Debug\RpgMngr.frmConfig.resources

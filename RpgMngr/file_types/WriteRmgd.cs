@@ -10,7 +10,7 @@ namespace RpgMngr.file_types
     /// </summary>
     class WriteRmgd
     {
-        string campaignsPath = DirMngr.Dir + @"Campanhas\";
+        static string defaultCampaignsPath = DirMngr.Dir + @"Campanhas\";
         DirMngr dir;
         List<string> file = new List<string>();
         DataTable paramCampaign;
@@ -25,8 +25,18 @@ namespace RpgMngr.file_types
         /// <param name="campaignName"></param>
         public WriteRmgd(string campaignName)
         {
+            List<DataTable> tables = new List<DataTable>()
+            {
+                ConfigMngr.DatatableModel("Load/Save")
+            };
+            ConfigMngr config = new ConfigMngr(tables);
+            if (config.valueofTable("CampaignDefaultPath") != null)
+            {
+                defaultCampaignsPath = config.valueofTable("CampaignDefaultPath");
+            }
+
             this.campaignName = campaignName;
-            campaignPath = campaignsPath + campaignName + @"\";
+            campaignPath = defaultCampaignsPath + campaignName + @"\";
             document = campaignName + ".rmgd";
             dir = new DirMngr(campaignPath + campaignName + ".rmgd");
             MontTables();
@@ -148,9 +158,9 @@ namespace RpgMngr.file_types
                 paramCampaign = value;
             }
         }
-        public string CampaignPath
+        public static string DefaultCampaignsPath
         {
-            get { return campaignPath; }
+            get { return defaultCampaignsPath; }
         }
         public string CampaignRmgd
         {

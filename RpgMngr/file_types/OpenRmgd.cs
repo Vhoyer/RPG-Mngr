@@ -7,7 +7,6 @@ namespace RpgMngr.file_types
 {
     public class OpenRmgd
     {
-        string campaignsPath = DirMngr.Dir + @"Campanhas\";
         DirMngr dir;
         List<string> file = new List<string>();
         DataTable paramCampaign, systemsSupported;

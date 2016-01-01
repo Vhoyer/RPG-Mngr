@@ -121,5 +121,11 @@ namespace RpgMngr
         {
             load_Recent();
         }
+
+        private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConfig frm = new frmConfig();
+            frm.ShowDialog();
+        }
     }
 }

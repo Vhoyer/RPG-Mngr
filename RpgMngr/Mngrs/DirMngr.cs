@@ -134,17 +134,17 @@ namespace Mngrs
                 if (!System.IO.File.Exists(path))
                 {
                     System.IO.File.Create(path).Close();
+                    return true;
                 }
                 else
                 {
-                    CreateDir();
+                    return false;
                 }
             }
             catch (Exception)
             {
-                return false;
+                throw;
             }
-            return true;
         }
         /// <summary>
         /// Cria um arquivo
@@ -159,20 +159,17 @@ namespace Mngrs
                 {
                     System.IO.File.Create(path).Close();
                     AppendText(firstLine);
+                    return true;
                 }
                 else
                 {
-                    List<string> lines = new List<string>();
-                    lines.Add(firstLine);
-                    lines.AddRange(ReadAll());
-                    System.IO.File.WriteAllLines(path, lines);
+                    return false;
                 }
             }
             catch (Exception)
             {
                 return false;
             }
-            return true;
         }
         /// <summary>
         /// Cria um arquivo
