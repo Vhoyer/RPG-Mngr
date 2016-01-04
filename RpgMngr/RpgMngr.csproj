@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="Mngrs\ConfigMngr.cs" />
     <Compile Include="Mngrs\CryptMngr.cs" />
+    <Compile Include="Mngrs\dataMngr.cs" />
     <Compile Include="Mngrs\DirMngr.cs" />
     <Compile Include="Mngrs\interfaceMngr.cs" />
     <Compile Include="file_types\OpenRmgd.cs" />
