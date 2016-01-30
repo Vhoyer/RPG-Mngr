@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mngrs
 {
-    public class interfaceMngr
+    public class utilitiesMngr
     {
         public static bool isFieldsEmpty(object[] fields)
         {
@@ -25,6 +25,18 @@ namespace Mngrs
             }
 
             return false;
+        }
+
+        public static List<string> convertToListString(string[] strArray)
+        {
+            List<string> lst = new List<string>();
+
+            foreach (string item in strArray)
+            {
+                lst.Add(item);
+            }
+
+            return lst;
         }
     }
 }

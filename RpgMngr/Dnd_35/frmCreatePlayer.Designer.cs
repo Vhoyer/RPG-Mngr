@@ -61,6 +61,7 @@
             this.textBox89 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -292,7 +293,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label135 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.grpGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -670,13 +671,23 @@
             this.panel1.Size = new System.Drawing.Size(689, 364);
             this.panel1.TabIndex = 4;
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Location = new System.Drawing.Point(382, 1060);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(284, 243);
+            this.groupBox11.TabIndex = 14;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Idioma";
+            // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.label135);
             this.groupBox12.Controls.Add(this.dataGridView1);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox12.Location = new System.Drawing.Point(7, 1309);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(332, 608);
+            this.groupBox12.Size = new System.Drawing.Size(332, 668);
             this.groupBox12.TabIndex = 13;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Perícias";
@@ -685,7 +696,6 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -2965,14 +2975,15 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "FOR";
             // 
-            // groupBox11
+            // label135
             // 
-            this.groupBox11.Location = new System.Drawing.Point(382, 1060);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(284, 184);
-            this.groupBox11.TabIndex = 14;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Idioma";
+            this.label135.AutoSize = true;
+            this.label135.Location = new System.Drawing.Point(8, 613);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(318, 26);
+            this.label135.TabIndex = 1;
+            this.label135.Text = "• Indicam Perícias que podem ser usadas sem graduação\r\n* sofre penalidade de arma" +
+    "dura, se houver (o dobro para natação)";
             // 
             // frmCreatePlayer
             // 
@@ -2995,6 +3006,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -3306,5 +3318,6 @@
         private System.Windows.Forms.Label label134;
         private System.Windows.Forms.TextBox textBox89;
         private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label label135;
     }
 }

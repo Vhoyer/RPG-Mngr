@@ -78,7 +78,7 @@ namespace RpgMngr
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-            if (!interfaceMngr.isFieldsEmpty(new object[] { txtNomeMesa, cbSistema }))
+            if (!utilitiesMngr.isFieldsEmpty(new object[] { txtNomeMesa, cbSistema }))
             {
                 WriteRmgd write = new WriteRmgd(txtNomeMesa.Text);
                 write.editTable(write.CampaignTable.TableName, "campaignName", txtNomeMesa.Text);

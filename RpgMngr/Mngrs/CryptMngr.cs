@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -56,6 +57,27 @@ namespace Mngrs
             memoryStream.Close();
             cryptoStream.Close();
             return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount).TrimEnd("\0".ToCharArray());
+        }
+        public static List<string> EncryptText(IEnumerable<string> plainText)
+        {
+            List<string> Encrypted = new List<string>();
+            foreach (string str in plainText)
+            {
+                Encrypted.Add(CryptMngr.Encrypt(str));
+            }
+
+            return Encrypted;
+        }
+        public static List<string> DecryptText(IEnumerable<string> encryptedText)
+        {
+            List<string> Decrypted = new List<string>();
+
+            foreach (string str in encryptedText)
+            {
+                Decrypted.Add(CryptMngr.Decrypt(str));
+            }
+
+            return Decrypted;
         }
         #endregion
 

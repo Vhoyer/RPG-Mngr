@@ -97,7 +97,7 @@
     <Compile Include="Mngrs\CryptMngr.cs" />
     <Compile Include="Mngrs\dataMngr.cs" />
     <Compile Include="Mngrs\DirMngr.cs" />
-    <Compile Include="Mngrs\interfaceMngr.cs" />
+    <Compile Include="Mngrs\utilitiesMngr.cs" />
     <Compile Include="file_types\OpenRmgd.cs" />
     <Compile Include="file_types\WriteRmgd.cs" />
     <Compile Include="Program.cs" />
